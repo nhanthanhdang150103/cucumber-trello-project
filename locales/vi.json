@@ -1,0 +1,5 @@
+{
+  "login_success": "Đăng nhập vào Trello thành công.",
+  "clicked_continue": "Đã nhấn nút Tiếp tục.",
+  "error_message": "Thông báo lỗi: {{message}}"
+}

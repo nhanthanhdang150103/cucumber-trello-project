@@ -1,0 +1,6 @@
+ngrok.exe
+.env
+node_modules/
+cookies.json
+*.log
+reports/

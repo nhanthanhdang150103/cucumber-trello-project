@@ -1,0 +1,574 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "create-a-board-on-trello;successfully-create-a-new-board",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Successfully create a new board",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1588046699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am logged in to Trello",
+            "match": {
+              "location": "features\\step_definitions\\createBoardSteps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9781666000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I click the create new board button",
+            "match": {
+              "location": "features\\step_definitions\\createBoardSteps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1066852599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I enter the board title \"My New Board\"",
+            "match": {
+              "location": "features\\step_definitions\\createBoardSteps.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 147643599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click the create board button",
+            "match": {
+              "location": "features\\step_definitions\\createBoardSteps.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4187930799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should see the new board with title \"My New Board\"",
+            "match": {
+              "location": "features\\step_definitions\\createBoardSteps.js:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4022499899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 243448299
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@trello",
+            "line": 3
+          },
+          {
+            "name": "@createBoard",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "create-a-board-on-trello",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Create a Board on Trello",
+    "tags": [],
+    "uri": "features\\createBoard.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-on-trello;successful-login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Successful login with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 336211599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on the Trello login page",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1229619400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter my email",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1291283100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click the continue button",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 468651100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I enter my password",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 905451400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I click the login button",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 53932499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I should be redirected to the Trello home page",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5055595800
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 203834999
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@trello",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-on-trello;failed-login-with-invalid-credentials",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Failed login with invalid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 315548600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "I am on the Trello login page",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1679342099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I enter my email",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1737575899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I click the continue button",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 225120399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "I enter wrong password",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 871643600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I click the login button",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45818099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "I should see a Trello login failure message",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 915175900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 193475099
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@trello",
+            "line": 12
+          },
+          {
+            "name": "@failedLogin",
+            "line": 12
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-on-trello;login-using-saved-cookies",
+        "keyword": "Scenario",
+        "line": 22,
+        "name": "Login using saved cookies",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 300829799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 23,
+            "name": "I use saved cookies to log in",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1685685700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "I should be redirected to the Trello home page",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 30033200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 152645300
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@trello",
+            "line": 21
+          },
+          {
+            "name": "@cookieLogin",
+            "line": 21
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-on-trello;add-and-verify-a-custom-cookie",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "Add and verify a custom cookie",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 355992100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "I am on the Trello login page",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2515205200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 29,
+            "name": "I set a cookie with name \"myCustomCookie\" and value \"testValue123\"",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1840599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "I should see the cookie with name \"myCustomCookie\" and value \"testValue123\"",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:91"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7423799
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 174135799
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@trello",
+            "line": 26
+          },
+          {
+            "name": "@cookieTest",
+            "line": 26
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-on-trello;delete-a-custom-cookie",
+        "keyword": "Scenario",
+        "line": 33,
+        "name": "Delete a custom cookie",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 308370100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 34,
+            "name": "I am on the Trello login page",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1876159700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 35,
+            "name": "I set a cookie with name \"myCustomCookie\" and value \"testValue123\"",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2565699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "I delete the cookie with name \"myCustomCookie\"",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5870599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 37,
+            "name": "I should see the cookie with name \"myCustomCookie\" and value \"testValue123\" should fail",
+            "match": {
+              "location": "features\\step_definitions\\trelloLoginSteps.js:98"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5783199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 214952999
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@trello",
+            "line": 32
+          },
+          {
+            "name": "@cookieTest",
+            "line": 32
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-on-trello",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login on Trello",
+    "tags": [],
+    "uri": "features\\trelloLogin.feature"
+  }
+]

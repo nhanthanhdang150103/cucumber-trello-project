@@ -1,0 +1,5 @@
+{
+  "login_success": "Logged in to Trello successfully.",
+  "clicked_continue": "Clicked the Continue button.",
+  "error_message": "Error message: {{message}}"
+}

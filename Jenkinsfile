@@ -1,35 +1,37 @@
-//
+```groovy
 pipeline {
-    agent any // Hoặc agent { label 'node18' } nếu bạn có agent cụ thể
+    agent any
 
-    tools {
-        nodejs 'NodeJS-18' // Đảm bảo 'NodeJS-18' được cấu hình trong Global Tool Configuration
+    environment {
+        TRELLO_EMAIL = credentials('TRELLO_EMAIL')
+        TRELLO_PASSWORD = credentials('TRELLO_PASSWORD')
+        TRELLO_WRONG_PASSWORD = credentials('TRELLO_WRONG_PASSWORD')
+        TRELLO_API_KEY = credentials('TRELLO_API_KEY')
+        TRELLO_TOKEN = credentials('TRELLO_TOKEN')
+        TRELLO_CARD_ID = credentials('TRELLO_CARD_ID')
+        // Cấu hình Node.js trực tiếp nếu không dùng Global Tool
+        PATH = "${env.PATH}:/usr/local/lib/nodejs/node-v18.20.4-linux-x64/bin"
     }
-
-    // environment {
-    //     // Sử dụng Jenkins Credentials để lưu trữ thông tin nhạy cảm
-    //     TRELLO_EMAIL = credentials('TRELLO_EMAIL')
-    //     TRELLO_PASSWORD = credentials('TRELLO_PASSWORD')
-    //     TRELLO_WRONG_PASSWORD = credentials('TRELLO_WRONG_PASSWORD')
-    //     TRELLO_API_KEY = credentials('TRELLO_API_KEY')
-    //     TRELLO_TOKEN = credentials('TRELLO_TOKEN')
-    //     TRELLO_CARD_ID = credentials('TRELLO_CARD_ID')
-    // }
 
     stages {
         stage('Checkout SCM') {
             steps {
                 echo 'Đang checkout mã nguồn...'
-                checkout scm // Kéo mã từ GitHub repository
+                checkout scm
             }
         }
 
         stage('Setup Environment & Install Dependencies') {
             steps {
-                echo 'Đang cài đặt các phụ thuộc của dự án...'
-                sh 'npm ci'
-                echo 'Đang cài đặt trình duyệt cho Playwright...'
-                sh 'npx playwright install --with-deps'
+                echo 'Đang cài đặt Node.js và dependencies...'
+                sh '''
+                    curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+                    apt-get install -y nodejs
+                    node -v
+                    npm -v
+                    npm ci
+                    npx playwright install --with-deps
+                '''
             }
         }
 
@@ -54,7 +56,6 @@ pipeline {
         always {
             echo 'Pipeline đã hoàn thành.'
             archiveArtifacts artifacts: '*.xml, *.json', allowEmptyArchive: true
-            // cleanWs() // Dọn dẹp workspace nếu cần
         }
         success {
             echo 'Pipeline thành công!'
@@ -63,7 +64,8 @@ pipeline {
             echo 'Pipeline thất bại.'
         }
         unstable {
-            echo 'Pipeline không ổn định (một số kiểm thử thất bại).'
+            echo 'Pipeline không ổn định.'
         }
     }
 }
+```

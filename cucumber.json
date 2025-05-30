@@ -1,12 +1,8 @@
-
 {
   "default": {
     "require": [
       "features/step_definitions/*.js",
       "features/hooks/*.js"
-    ],
-    "format": [
-      "json:cucumber-report/cucumber.json"
     ],
     "formatOptions": {
       "snippetInterface": "synchronous"
@@ -17,11 +13,7 @@
   "trello": {
     "require": [
       "features/step_definitions/trelloLoginSteps.js",
-      "features/hooks/trelloHooks.js",
-      "features/step_definitions/createBoardSteps.js"
-    ],
-    "format": [
-      "json:cucumber-report/cucumber.json"
+      "features/hooks/trelloHooks.js"
     ],
     "formatOptions": {
       "snippetInterface": "synchronous"
@@ -30,6 +22,19 @@
     "defaultTimeout": 60000,
     "publishQuiet": true,
     "requireModule": [],
+    "strict": true
+  },
+  "trello-ts": {
+    "require": [ "features/step_definitions/trelloLoginSteps.ts",
+     "features/hooks/trelloHooks.js"           
+    ],
+    "requireModule": ["ts-node/register"],
+    "formatOptions": {
+      "snippetInterface": "synchronous"
+    },
+    "paths": ["features/trelloLogin.feature"],
+    "defaultTimeout": 60000,
+    "publishQuiet": true,
     "strict": true
   }
 }

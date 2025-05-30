@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        nodejs 'Node18' // Đảm bảo tên này trùng với cấu hình trong Jenkins
+        nodejs 'Node22' // Đảm bảo tên này trùng với cấu hình trong Jenkins
     }
     // environment {
     //     TRELLO_EMAIL = credentials('TRELLO_EMAIL')

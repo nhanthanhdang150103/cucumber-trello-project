@@ -10,7 +10,7 @@ Before({ tags: "@trello" }, async function () {
   i18n.setLocale(locale);
   console.log(`Using locale: ${locale}`);
   console.log(i18n.__('login_success'));
-  this.browser = await chromium.launch({ headless: false });
+  this.browser = await chromium.launch({ headless: true });
   this.page = await this.browser.newPage();
   await this.page.context().clearCookies(); // Xóa cookies trước khi bắt đầu
   console.log('Cleared all cookies.');

@@ -3,12 +3,12 @@ pipeline {
     tools {
         nodejs 'Node18' // Đảm bảo tên này trùng với cấu hình trong Jenkins
     }
-    environment {
-        TRELLO_EMAIL = credentials('TRELLO_EMAIL')
-        TRELLO_PASSWORD = credentials('TRELLO_PASSWORD')
-        TRELLO_WRONG_PASSWORD = credentials('TRELLO_WRONG_PASSWORD')
-        LANGUAGE = 'vi'
-    }
+    // environment {
+    //     TRELLO_EMAIL = credentials('TRELLO_EMAIL')
+    //     TRELLO_PASSWORD = credentials('TRELLO_PASSWORD')
+    //     TRELLO_WRONG_PASSWORD = credentials('TRELLO_WRONG_PASSWORD')
+    //     LANGUAGE = 'vi'
+    // }
     stages {
         stage('Checkout') {
             steps {
@@ -34,7 +34,7 @@ pipeline {
         always {
             archiveArtifacts artifacts: 'cucumber-report/*.json', allowEmptyArchive: true
             echo 'Archived Cucumber report artifacts'
-            
+
         }
     }
 }

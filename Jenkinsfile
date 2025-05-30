@@ -34,6 +34,7 @@ pipeline {
         always {
             archiveArtifacts artifacts: 'cucumber-report/*.json', allowEmptyArchive: true
             echo 'Archived Cucumber report artifacts'
+            
         }
     }
 }

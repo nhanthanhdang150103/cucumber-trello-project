@@ -22,6 +22,13 @@ pipeline {
                 echo 'Installed Node.js dependencies'
             }
         }
+        stage('Install Playwright Browsers') {
+            steps {
+                sh 'npx playwright install'
+                echo 'Installed Playwright browsers'
+            }
+        }
+        
         stage('Run Cucumber Tests') {
             steps {
                 // Đảm bảo cấu hình Cucumber xuất JSON vào thư mục này

@@ -1,14 +1,13 @@
-
 pipeline {
     agent any
     tools {
-        nodejs 'Node18' // Ensure this matches the Node.js version name in Jenkins Global Tool Configuration
+        nodejs 'Node18' // Đảm bảo tên này trùng với cấu hình trong Jenkins
     }
     environment {
-        TRELLO_EMAIL = credentials('TRELLO_EMAIL') // Jenkins credential ID
-        TRELLO_PASSWORD = credentials('TRELLO_PASSWORD') // Jenkins credential ID
-        TRELLO_WRONG_PASSWORD = credentials('TRELLO_WRONG_PASSWORD') // Jenkins credential ID
-        LANGUAGE = 'vi' // Set language for i18n
+        TRELLO_EMAIL = credentials('TRELLO_EMAIL')
+        TRELLO_PASSWORD = credentials('TRELLO_PASSWORD')
+        TRELLO_WRONG_PASSWORD = credentials('TRELLO_WRONG_PASSWORD')
+        LANGUAGE = 'vi'
     }
     stages {
         stage('Checkout') {
@@ -23,27 +22,11 @@ pipeline {
                 echo 'Installed Node.js dependencies'
             }
         }
-        stage('Create Report Directory') {
-            steps {
-                sh 'mkdir -p cucumber-report'
-                echo 'Created cucumber-report directory'
-            }
-        }
         stage('Run Cucumber Tests') {
             steps {
+                // Đảm bảo cấu hình Cucumber xuất JSON vào thư mục này
                 sh 'npm test -- --tags "@trello"'
                 echo 'Ran Cucumber tests with @trello tag'
-            }
-        }
-        stage('Generate Cucumber Report') {
-            steps {
-                cucumber fileIncludePattern: '**/*.json',
-                        jsonReportDirectory: 'cucumber-report',
-                        sortingMethod: 'ALPHABETICAL',
-                        failedFeaturesNumber: 0,
-                        failedScenariosNumber: 0,
-                        undefinedStepsNumber: 0
-                echo 'Generated Cucumber report'
             }
         }
     }
@@ -52,12 +35,5 @@ pipeline {
             archiveArtifacts artifacts: 'cucumber-report/*.json', allowEmptyArchive: true
             echo 'Archived Cucumber report artifacts'
         }
-        // Optional: Uncomment if Slack plugin is configured
-        // failure {
-        //     slackSend channel: '#your-channel', color: 'danger', message: "Build ${env.BUILD_NUMBER} failed!"
-        // }
-        // success {
-        //     slackSend channel: '#your-channel', color: 'good', message: "Build ${env.BUILD_NUMBER} succeeded!"
-        // }
     }
 }
